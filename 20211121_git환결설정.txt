@@ -1,0 +1,61 @@
+--github 설정
+
+-- git download후 설치
+-- git bash 환경설정
+git config --global user.name "suik ryu"
+git config --global user.email "newyemac@gmail.com"
+확인
+git config --list : 이름과 이메일만 확인
+
+--vs code에서
+-- terminal 메뉴 에서 실행 : 
+echo "# git_configuration" >> README.md
+git init(맨 처음 한번만)
+git add . (모든것을 올리겠다. git add test.py면 test.py만 올림)
+git status 상태로 확인하는 것임
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/newyemac/git_configuration.git : 연결고리만들기
+git remote -v : 연결고리 확인
+git push -u origin master : git branch -M main을 실행하지 않았을때 실행
+git push -u origin main : 파일을 git으로 보내기
+
+파일을 추가/수정/삭제 후
+git add .
+git status
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   hello.cpp
+		
+git commit -m "second commit"
+git push -u origin master
+
+-- 다른 컴퓨터에서 download를 반고자 할때
+git hub에서 code 버튼을 클릭-> 링코 복사 
+cmd창에서 git clone 복사한 주소 freshman(깃헙주소 폴더이름 써주기)
+cd freshman 엔커
+code . 엔터
+
+
+최초 파일과 merge
+terminal 창에서
+git add .
+git commit -m "freshman first commit"
+git push origin master하면 절대 안됨
+git checkout -b freshman : 신입을 위한 별도 공간 생성
+git push origin freshman 엔터
+
+웹사이트에서
+compare & pull request 클릭
+ - 변경한 내용을 ment한다.
+
+확인이 되면 merge pull request 클릭. 새로운 최종본이 된다.
+
+-- 소스 코드 동기화.
+terminal에서
+git add .
+git commit -m "second commit"
+git pull origin master : master에서 모든 소스를 가져온다.
+master에 있는 코드가 내거 와 합쳐진다.
+
